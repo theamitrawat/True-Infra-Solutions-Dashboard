@@ -25,6 +25,22 @@ The dashboard turns static project data into KPI cards, charts, filterable table
 | Analytics | Deeper visual analysis of margins, trends, ratings, cities, markets, and services. |
 | Ask AI | Chat interface for asking questions about the project dataset. |
 
+### Overview
+<img width="1911" height="997" alt="image" src="https://github.com/user-attachments/assets/88385493-4a6b-4897-a2c7-bb316aa66544" />
+
+### Projects
+<img width="1911" height="991" alt="image" src="https://github.com/user-attachments/assets/0bcff926-1b8b-40a8-92d9-5c2b8620bdc0" />
+
+### Clients
+<img width="1909" height="997" alt="image" src="https://github.com/user-attachments/assets/3a6d51b8-8bf9-4118-96f9-6d5fa17b91a1" />
+
+### Analytics
+<img width="1911" height="989" alt="image" src="https://github.com/user-attachments/assets/fb1a269a-f247-49b2-8283-82d7d5cf60a8" />
+
+### Ask AI
+<img width="1911" height="994" alt="image" src="https://github.com/user-attachments/assets/112e7ff7-799f-43df-a6b4-61f8a4c13796" />
+
+
 ## Tech Stack
 
 - React 19
