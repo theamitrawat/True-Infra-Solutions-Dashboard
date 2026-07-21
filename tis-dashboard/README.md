@@ -1,178 +1,219 @@
-# TIS Dashboard
+# True Infra Solutions Dashboard
 
-A business analytics dashboard built during my internship at **True Infra Solutions** — a construction and fit-out company based in Delhi NCR.
+A React business analytics dashboard for **True Infra Solutions**, a construction and fit-out company based in Delhi NCR.
 
-The dashboard visualizes project data across 6 service categories and includes an AI-powered chat feature to query the data in natural language.
+The dashboard turns static project data into KPI cards, charts, filterable tables, client summaries, service analytics, and an AI chat interface for asking natural-language questions about the business data.
 
----
+## Features
 
-## Live Demo
-
-🚀 [View on GitHub Pages](https://YOUR-USERNAME.github.io/tis-dashboard/)
-
----
+- Business overview with total projects, revenue, cost, and profit.
+- Service and city filters for quick project exploration.
+- Revenue by service and projects by city charts.
+- Dedicated project table with ratings, service badges, and financial details.
+- Client leaderboard with revenue, cost, profit, and project counts.
+- Analytics page for margin, monthly trends, market segments, ratings, and service performance.
+- Ask AI page powered by Groq's Llama model for questions about project data.
+- GitHub Pages deployment workflow included.
 
 ## Pages
 
-| Page | Description |
-|---|---|
-| Overview | KPI cards, revenue/city charts, recent projects table with filters |
-| Projects | Filter by service & city, project list with ratings |
-| Clients | Client-wise revenue breakdown, top 3 podium, full table with profit |
-| Analytics | Deeper data visualisations across services and cities |
-| Ask AI | Chat with Groq (Llama 3.3) to ask questions about the data |
-
----
+| Page | Purpose |
+| --- | --- |
+| Overview | Main dashboard with KPIs, filters, charts, and recent projects. |
+| Projects | Filterable project list by service and city. |
+| Clients | Client-wise revenue, cost, profit, ranking, and top clients. |
+| Analytics | Deeper visual analysis of margins, trends, ratings, cities, markets, and services. |
+| Ask AI | Chat interface for asking questions about the project dataset. |
 
 ## Tech Stack
 
-- **React 19** + **Vite**
-- **Tailwind CSS v4** for styling
-- **Recharts** for bar and donut charts
-- **React Router DOM v7** for navigation
-- **Groq API** (Llama 3.3 70B) for AI chat
-
----
+- React 19
+- Vite
+- Tailwind CSS v4
+- React Router DOM
+- Recharts
+- Groq API
+- ESLint
 
 ## Project Structure
 
+```text
+tis-dashboard/
+|-- public/
+|   |-- favicon.svg
+|   `-- icons.svg
+|-- src/
+|   |-- assets/
+|   |   `-- hero.png
+|   |-- components/
+|   |   |-- DataTable.jsx
+|   |   |-- KpiCard.jsx
+|   |   |-- RatingBar.jsx
+|   |   |-- SectionHeader.jsx
+|   |   `-- ServiceBadge.jsx
+|   |-- data/
+|   |   |-- electrical.json
+|   |   |-- exterior_fitout.json
+|   |   |-- hvac.json
+|   |   |-- interior_fitout.json
+|   |   |-- maintenance.json
+|   |   `-- plumbing.json
+|   |-- pages/
+|   |   |-- Analytics.jsx
+|   |   |-- AskAI.jsx
+|   |   |-- Clients.jsx
+|   |   `-- Projects.jsx
+|   |-- services/
+|   |   |-- aiService.js
+|   |   `-- dataService.js
+|   |-- App.jsx
+|   |-- constants.js
+|   |-- index.css
+|   `-- main.jsx
+|-- .github/workflows/deploy.yml
+|-- index.html
+|-- package.json
+`-- vite.config.js
 ```
-src/
-├── App.jsx              # main layout, sidebar, dashboard route
-├── main.jsx             # entry point
-├── constants.js         # shared colors, formatCurrency helper
-├── index.css            # tailwind import
-├── data/                # static JSON files (6 services)
-│   ├── electrical.json
-│   ├── hvac.json
-│   ├── plumbing.json
-│   ├── interior_fitout.json
-│   ├── exterior_fitout.json
-│   └── maintenance.json
-├── components/          # reusable UI components
-│   ├── KpiCard.jsx
-│   ├── DataTable.jsx
-│   ├── RatingBar.jsx
-│   ├── SectionHeader.jsx
-│   └── ServiceBadge.jsx
-├── pages/
-│   ├── Projects.jsx     # filterable project table
-│   ├── Clients.jsx      # client aggregation + top 3
-│   ├── Analytics.jsx    # charts and trends
-│   └── AskAI.jsx        # Groq chat interface
-└── services/
-    ├── dataService.js   # data aggregation helpers
-    └── aiService.js     # Groq API + prompt builder
-```
-
----
 
 ## Getting Started
 
-### 1. Clone the repo
+### Prerequisites
+
+- Node.js 20 or newer
+- npm
+
+### Installation
+
+From the repository root:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/tis-dashboard.git
 cd tis-dashboard
-```
-
-### 2. Install dependencies
-
-```bash
 npm install
 ```
 
-### 3. Set up environment variables
+### Environment Variables
 
-Copy `.env.example` to `.env` and fill in your key:
-
-```bash
-copy .env.example .env
-```
+Create a local `.env` file in the `tis-dashboard` folder:
 
 ```env
 VITE_GROQ_API_KEY=your_groq_api_key_here
 ```
 
-Get a free API key from [console.groq.com](https://console.groq.com)
+An `.env.example` file is included as a reference. The API key is required only for the Ask AI page.
 
-### 4. Run the dev server
+### Run Locally
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173) in your browser.
+Open the local URL printed by Vite, usually:
 
----
-
-## Deploying to GitHub Pages
-
-The project deploys automatically via GitHub Actions on every push to `main`.
-
-### One-time setup
-
-1. **Create a GitHub repository** named `tis-dashboard` and push this project to it.
-
-2. **Add your API key as a GitHub secret:**
-   - Go to your repo → `Settings → Secrets and variables → Actions`
-   - Click **New repository secret**
-   - Name: `VITE_GROQ_API_KEY`
-   - Value: your actual Groq API key
-
-3. **Enable GitHub Pages:**
-   - Go to your repo → `Settings → Pages`
-   - Under **Source**, select **GitHub Actions**
-
-4. Push to `main` — the workflow in `.github/workflows/deploy.yml` will build and deploy automatically.
-
-Your live URL will be:
-```
-https://<your-github-username>.github.io/tis-dashboard/
+```text
+http://localhost:5173/tis-dashboard/
 ```
 
-> **Different repo name?** Update `base` in `vite.config.js` and `basename` in `src/main.jsx` to match.
+## Available Scripts
 
----
+| Command | Description |
+| --- | --- |
+| `npm run dev` | Starts the Vite development server. |
+| `npm run build` | Creates a production build in `dist/`. |
+| `npm run preview` | Serves the production build locally. |
+| `npm run lint` | Runs ESLint checks. |
 
 ## Data
 
-The dashboard uses static JSON data in `src/data/`. Each file represents one service category:
+The dashboard uses static JSON files from `src/data/`. Each file represents one service category:
 
-- **Electrical** — electrical installation projects
-- **HVAC** — heating, ventilation & AC projects
-- **Plumbing** — plumbing work
-- **Interior Fitout** — interior fit-out projects
-- **Exterior Fitout** — exterior fit-out projects
-- **Maintenance** — maintenance contracts
+- Electrical
+- HVAC
+- Plumbing
+- Interior Fitout
+- Exterior Fitout
+- Maintenance
 
-Each record contains: `Project_ID`, `Client_Name`, `City`, `Service`, `Market`, `Revenue`, `Cost`, `Rating`, `Start_Date`, `End_Date`
+Each project record includes:
 
----
+```text
+Project_ID
+Client_Name
+City
+Service
+Market
+Revenue
+Cost
+Rating
+Start_Date
+End_Date
+```
+
+The data aggregation logic lives in `src/services/dataService.js`, including helpers for totals, margins, averages, grouping, filtering, rating distribution, monthly trends, and top project rankings.
 
 ## AI Feature
 
-The Ask AI page sends a summarized version of the project data as context to the Groq API. The model (Llama 3.3 70B) can answer questions like:
+The Ask AI page uses `src/services/aiService.js` to build a business summary from the project data and send it to the Groq chat completions API.
 
-- *"Which city has the most projects?"*
-- *"Who is the top client by revenue?"*
-- *"What is the total profit?"*
-- *"Which service earns the most?"*
+Current model:
 
-The last 6 messages are included in each request so the conversation has memory.
+```text
+llama-3.3-70b-versatile
+```
 
-> **Note:** The Groq API key is never bundled into the git history. It is injected at build time via a GitHub Actions secret.
+Example questions:
 
----
+- Which city has the most projects?
+- Who is the top client by revenue?
+- What is the overall profit margin?
+- Which service earns the most revenue?
+- Which market segment is most profitable?
+
+The chat supports streaming responses, recent message history, follow-up suggestions, copy actions, and friendly error messages for missing or invalid API keys.
+
+## Deployment
+
+The project includes a GitHub Actions workflow at `.github/workflows/deploy.yml` for deploying to GitHub Pages.
+
+Deployment runs when changes are pushed to the `main` branch. The workflow:
+
+1. Checks out the repository.
+2. Sets up Node.js 20.
+3. Installs dependencies with `npm ci`.
+4. Builds the Vite app.
+5. Uploads and deploys the `dist/` folder to GitHub Pages.
+
+Before deploying, add this repository secret in GitHub:
+
+```text
+VITE_GROQ_API_KEY
+```
+
+Also make sure GitHub Pages is configured to use **GitHub Actions** as the source.
+
+The app is configured for this GitHub Pages base path:
+
+```text
+/tis-dashboard/
+```
+
+If the repository name changes, update both:
+
+- `base` in `vite.config.js`
+- `basename` in `src/main.jsx`
 
 ## Brand Colors
 
-| Color | Hex | Usage |
-|---|---|---|
-| Navy | `#1e3a5f` | Sidebar, headings, table borders |
-| Gold | `#d4920a` | Accents, revenue numbers, active nav |
-| Light Gray | `#f0f2f5` | Page background |
+| Name | Hex | Usage |
+| --- | --- | --- |
+| Navy | `#1e3a5f` | Sidebar, headings, primary chart color. |
+| Gold | `#d4920a` | Accents, active navigation, revenue highlights. |
+| Mid Navy | `#2e5484` | Secondary metrics and positive values. |
+| Light Navy | `#7aa3cc` | Supporting labels and muted UI text. |
+| Light Gray | `#f0f2f5` | Page background and soft panels. |
 
----
+## Notes
 
-*Built as part of frontend engineering internship at True Infra Solutions, 2024.*
+- `.env` should stay local and should not be committed.
+- Static project data can be updated by editing the JSON files in `src/data/`.
+- The dashboard was built as part of a frontend engineering internship project for True Infra Solutions.
