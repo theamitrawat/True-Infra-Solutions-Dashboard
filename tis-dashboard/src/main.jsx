@@ -4,11 +4,10 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import App from "./App.jsx";
 
-// basename must match the `base` value in vite.config.js and your GitHub repo name.
-// GitHub Pages: https://<username>.github.io/tis-dashboard/
+// Vercel serves from root, so no basename needed
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter basename="/tis-dashboard">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </StrictMode>
