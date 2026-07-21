@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- white background -->
+  <rect width="64" height="64" fill="#ffffff"/>
+
+  <!-- R in navy — drawn first so T overlaps it from left -->
+  <text
+    x="38"
+    y="50"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="50"
+    font-weight="bold"
+    fill="#1e3a5f"
+    text-anchor="middle"
+  >R</text>
+
+  <!-- T in gold — overlaps R from the left side -->
+  <text
+    x="24"
+    y="50"
+    font-family="Georgia, 'Times New Roman', serif"
+    font-size="50"
+    font-weight="bold"
+    fill="#d4920a"
+    text-anchor="middle"
+  >T</text>
+</svg>
