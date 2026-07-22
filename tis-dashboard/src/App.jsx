@@ -88,7 +88,7 @@ function App() {
         </nav>
 
         <div className="px-5 py-4 text-xs" style={{ color: "#4a7ab5", borderTop: "1px solid #2e5484" }}>
-          Internship · 2024
+          True Infra Solutions · 2024
         </div>
       </div>
 

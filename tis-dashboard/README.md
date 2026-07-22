@@ -232,4 +232,4 @@ If the repository name changes, update both:
 
 - `.env` should stay local and should not be committed.
 - Static project data can be updated by editing the JSON files in `src/data/`.
-- The dashboard was built as part of a frontend engineering internship project for True Infra Solutions.
+- The dashboard is a personal project built to visualise and analyse True Infra Solutions project data.
